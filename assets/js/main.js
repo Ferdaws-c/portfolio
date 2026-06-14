@@ -13,7 +13,7 @@ const typingEl = document.getElementById('tagline-typed');
 const phrases = [
   'Mobile Apps with Flutter',
   'Embedded IoT Systems',
-  'Algorithms & Data Structures',
+  'Interactive Learning Games',
   'Cross-platform Experiences',
 ];
 
