@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Ferdaws Qaem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --clr-bg: #0D0F1A;
+      --clr-primary: #5B5EF4;
+      --clr-accent: #00E5C3;
+      --clr-text: #F0F2FF;
+      --clr-muted: #8891B0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 1.5rem;
+    }
+    .code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, #5B5EF4, #00E5C3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    h1 { font-size: 1.5rem; color: var(--clr-text); }
+    p  { color: var(--clr-muted); max-width: 400px; }
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #5B5EF4, #00E5C3);
+      color: #fff;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(91,94,244,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1>Page not found</h1>
+  <p>Looks like this page wandered off — kind of like an untracked item in the Campus Lost &amp; Found app.</p>
+  <a href="index.html">← Back to Portfolio</a>
+</body>
+</html>
