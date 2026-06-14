@@ -1052,6 +1052,11 @@ strong {
   color: #0A66C2;
 }
 
+.contact-card-icon--phone {
+  background: rgba(52,211,153,0.12);
+  color: var(--clr-green);
+}
+
 .contact-card:hover .contact-card-icon {
   transform: scale(1.1) rotate(-5deg);
 }
