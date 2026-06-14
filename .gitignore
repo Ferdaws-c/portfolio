@@ -15,3 +15,6 @@ npm-debug.log*
 # Misc
 *.log
 .env
+
+# CV original (space in filename — use Ferdaws_Qaem_Resume.pdf instead)
+CV/Ferdaws Qaem Resume.pdf
