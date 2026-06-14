@@ -299,6 +299,7 @@ strong {
 .pill--orange  { background: rgba(255,122,69,0.12); color: var(--clr-orange); border-color: rgba(255,122,69,0.3); }
 .pill--purple  { background: rgba(168,85,247,0.12); color: var(--clr-purple); border-color: rgba(168,85,247,0.3); }
 .pill--green   { background: rgba(52,211,153,0.12); color: var(--clr-green); border-color: rgba(52,211,153,0.3); }
+.pill--amber   { background: rgba(251,191,36,0.12); color: #FBBF24; border-color: rgba(251,191,36,0.3); }
 .pill--muted   { background: var(--clr-surface-2); color: var(--clr-text-muted); border-color: var(--clr-border); }
 
 .tag {
