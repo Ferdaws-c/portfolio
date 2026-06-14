@@ -5,7 +5,7 @@
 > Seeking a software engineering internship.
 
 ## 🔗 Live Site
-**[ferdaws-c.github.io/portfolio](https://ferdaws-c.github.io/portfolio)** *(coming soon)*
+**[ferdaws-c.github.io/portfolio](https://ferdaws-c.github.io/portfolio)** 
 
 ## 🛠️ Built With
 - HTML5 (semantic)
