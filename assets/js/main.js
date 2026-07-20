@@ -11,6 +11,7 @@
 // ============================================================
 const typingEl = document.getElementById('tagline-typed');
 const phrases = [
+  'Local RAG AI Assistants',
   'Mobile Apps with Flutter',
   'Embedded IoT Systems',
   'Interactive Learning Games',
