@@ -876,13 +876,15 @@ strong {
 /* ============================================================
    11. EDUCATION SECTION
    ============================================================ */
-.education-timeline {
+.education-timeline,
+.experience-timeline {
   max-width: 800px;
   margin-inline: auto;
   position: relative;
 }
 
-.education-timeline::before {
+.education-timeline::before,
+.experience-timeline::before {
   content: '';
   position: absolute;
   left: 16px;
@@ -1300,8 +1302,9 @@ strong {
     grid-template-columns: 1fr;
   }
 
-  /* Education timeline */
-  .education-timeline::before { display: none; }
+  /* Education & Experience timeline */
+  .education-timeline::before,
+  .experience-timeline::before { display: none; }
   .timeline-item {
     grid-template-columns: 1fr;
   }
