@@ -9,10 +9,12 @@
    ============================================================ */
 :root {
   /* Colors */
-  --clr-bg:           #0D0F1A;
-  --clr-surface:      #161929;
-  --clr-surface-2:    #1E2235;
+  --clr-bg:           #080A14;
+  --clr-surface:      #0F1120;
+  --clr-surface-2:    #171A2E;
+  --clr-surface-glass: rgba(15, 17, 32, 0.6);
   --clr-border:       rgba(255, 255, 255, 0.07);
+  --clr-border-glow:  rgba(91, 94, 244, 0.4);
   --clr-primary:      #5B5EF4;
   --clr-primary-glow: rgba(91, 94, 244, 0.35);
   --clr-accent:       #00E5C3;
@@ -26,8 +28,9 @@
 
   /* Gradients */
   --grad-primary:     linear-gradient(135deg, #5B5EF4 0%, #00E5C3 100%);
-  --grad-hero:        radial-gradient(ellipse at 20% 50%, rgba(91,94,244,0.15) 0%, transparent 60%),
-                      radial-gradient(ellipse at 80% 20%, rgba(0,229,195,0.10) 0%, transparent 50%);
+  --grad-hero:        radial-gradient(ellipse at 20% 50%, rgba(91,94,244,0.18) 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 20%, rgba(0,229,195,0.12) 0%, transparent 50%),
+                      radial-gradient(ellipse at 50% 100%, rgba(168,85,247,0.10) 0%, transparent 55%);
 
   /* Typography */
   --font-sans:        'Inter', system-ui, -apple-system, sans-serif;
@@ -47,17 +50,20 @@
   --radius-sm:   6px;
   --radius-md:   12px;
   --radius-lg:   20px;
+  --radius-xl:   28px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-glow:   0 0 40px rgba(91, 94, 244, 0.2);
-  --shadow-accent: 0 0 40px rgba(0, 229, 195, 0.15);
+  --shadow-card:      0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow:      0 0 50px rgba(91, 94, 244, 0.25);
+  --shadow-glow-lg:   0 0 80px rgba(91, 94, 244, 0.3);
+  --shadow-accent:    0 0 50px rgba(0, 229, 195, 0.2);
+  --shadow-orange:    0 0 50px rgba(255, 122, 69, 0.2);
 
   /* Transitions */
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
-  --transition-slow:   400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:   500ms cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Layout */
   --max-width: 1200px;
@@ -451,27 +457,36 @@ strong {
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(100px);
   pointer-events: none;
-  animation: orb-drift 8s ease-in-out infinite alternate;
 }
 
 .hero-orb--1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(91,94,244,0.25) 0%, transparent 70%);
-  top: -100px;
-  left: -100px;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(91,94,244,0.3) 0%, transparent 70%);
+  top: -150px;
+  left: -150px;
+  animation: orb-drift-1 12s ease-in-out infinite alternate;
 }
 
 .hero-orb--2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,229,195,0.2) 0%, transparent 70%);
+  bottom: -150px;
+  right: -80px;
+  animation: orb-drift-2 15s ease-in-out infinite alternate;
+}
+
+/* Third ambient orb for depth */
+.hero-orb--3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0,229,195,0.15) 0%, transparent 70%);
-  bottom: -100px;
-  right: -50px;
-  animation-delay: -4s;
-  animation-direction: alternate-reverse;
+  background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+  top: 40%;
+  left: 55%;
+  animation: orb-drift-3 18s ease-in-out infinite alternate;
 }
 
 .hero-content {
@@ -745,42 +760,91 @@ strong {
   gap: var(--space-xl);
 }
 
+/* === PROJECT CARD — FULL REDESIGN WITH THUMBNAIL === */
 .project-card {
-  background: var(--clr-surface);
+  background: var(--clr-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
   transition: all var(--transition-slow);
   position: relative;
   overflow: hidden;
 }
 
+/* Animated gradient border on hover using pseudo-element */
 .project-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  padding: 1px;
   background: var(--grad-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity var(--transition-slow);
+  pointer-events: none;
 }
 
 .project-card:hover {
-  border-color: rgba(91,94,244,0.3);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
+  border-color: transparent;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-card), var(--shadow-glow-lg);
 }
 
 .project-card:hover::before { opacity: 1; }
 
+/* Featured card subtle tint */
 .project-card--featured {
-  border-color: rgba(91,94,244,0.3);
-  background: linear-gradient(135deg, var(--clr-surface) 0%, rgba(91,94,244,0.05) 100%);
+  border-color: rgba(91,94,244,0.25);
+  background: linear-gradient(160deg, rgba(91,94,244,0.07) 0%, var(--clr-surface-glass) 60%);
+}
+
+/* === THUMBNAIL IMAGE at top of card === */
+.project-thumbnail {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.project-card:hover .project-thumbnail img {
+  transform: scale(1.07);
+}
+
+/* Gradient overlay at bottom of thumbnail for readability */
+.project-thumbnail::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--clr-surface-glass) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Card body below thumbnail */
+.project-body {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex: 1;
 }
 
 .project-card-header {
@@ -795,10 +859,6 @@ strong {
   font-weight: 700;
   color: var(--clr-text-dim);
   letter-spacing: 0.1em;
-}
-
-.project-icon {
-  font-size: 1.75rem;
 }
 
 .project-badge-featured {
@@ -822,7 +882,7 @@ strong {
 }
 
 .project-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--clr-text);
   font-weight: 700;
   line-height: 1.3;
@@ -871,6 +931,20 @@ strong {
   flex-wrap: wrap;
   margin-top: auto;
   padding-top: var(--space-sm);
+}
+
+/* Demo video button - accent colored */
+.btn-demo {
+  background: linear-gradient(135deg, rgba(0,229,195,0.15) 0%, rgba(0,229,195,0.05) 100%);
+  border: 1.5px solid rgba(0,229,195,0.4);
+  color: var(--clr-accent);
+}
+
+.btn-demo:hover {
+  background: rgba(0,229,195,0.2);
+  border-color: var(--clr-accent);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
@@ -1213,9 +1287,24 @@ strong {
   50%       { opacity: 0.7; transform: scale(1.3); }
 }
 
-@keyframes orb-drift {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(30px, 20px) scale(1.05); }
+@keyframes orb-drift-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(40px, 30px) scale(1.08); }
+  66%  { transform: translate(-20px, 50px) scale(0.95); }
+  100% { transform: translate(60px, -30px) scale(1.12); }
+}
+
+@keyframes orb-drift-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(-50px, -40px) scale(1.1); }
+  70%  { transform: translate(30px, -20px) scale(0.9); }
+  100% { transform: translate(-30px, 50px) scale(1.05); }
+}
+
+@keyframes orb-drift-3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-60px, 40px) scale(1.15); }
+  100% { transform: translate(40px, -50px) scale(0.88); }
 }
 
 @keyframes scroll-pulse {
@@ -1295,6 +1384,11 @@ strong {
   /* Projects grid */
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Project card body padding on mobile */
+  .project-body {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
   }
 
   /* Skills grid */
