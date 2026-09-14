@@ -1,632 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ferdaws Qaem | Flutter Developer & Software Engineering Portfolio</title>
-  <meta name="description" content="Ferdaws Qaem — 4th-year Computer Engineering student specializing in Flutter/Dart mobile development, Embedded C/IoT systems, and Python. Seeking a software engineering internship. Erasmus+ alumni at VSB Ostrava." />
-  <meta name="keywords" content="Ferdaws Qaem, Flutter developer, computer engineering, portfolio, software engineering internship, IoT, embedded systems, Python" />
+  <meta name="theme-color" content="#08111f" />
+  <title>Ferdaws Qaem | AI, Software & Embedded Systems Engineer</title>
+  <meta name="description" content="Portfolio of Ferdaws Qaem, a Computer Engineering student building local AI systems, mobile applications, embedded IoT solutions, and interactive software." />
+  <meta name="keywords" content="Ferdaws Qaem, AI engineer, software engineer, Flutter developer, computer engineering, RAG, local LLM, IoT, embedded systems, Python" />
   <meta name="author" content="Ferdaws Qaem" />
-
-  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ferdaws-c.github.io/portfolio/" />
-  <meta property="og:title" content="Ferdaws Qaem | Software Engineering Portfolio" />
-  <meta property="og:description" content="4th-year Computer Engineering student. Flutter, Embedded C/IoT, Python. Erasmus+ alumni. Seeking software engineering internship." />
+  <meta property="og:title" content="Ferdaws Qaem | Engineering Portfolio" />
+  <meta property="og:description" content="Selected work across local AI, mobile development, embedded IoT systems, and software engineering." />
   <meta property="og:image" content="https://ferdaws-c.github.io/portfolio/assets/images/og-cover.PNG" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ferdaws Qaem | Software Engineering Portfolio" />
-  <meta name="twitter:description" content="Flutter developer, IoT engineer, CS student — open to internship opportunities." />
+  <meta name="twitter:title" content="Ferdaws Qaem | Engineering Portfolio" />
+  <meta name="twitter:description" content="Local AI, mobile, embedded IoT, and software engineering projects." />
   <meta name="twitter:image" content="https://ferdaws-c.github.io/portfolio/assets/images/og-cover.PNG" />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://ferdaws-c.github.io/portfolio/" />
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-  <!-- Skip to main content (accessibility) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="page-progress" id="page-progress" aria-hidden="true"></div>
 
-  <!-- ===== NAVIGATION ===== -->
   <header class="site-header" id="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a href="#hero" class="nav-logo" aria-label="Ferdaws Qaem — home">
-        <span class="logo-bracket">&lt;</span>FQ<span class="logo-bracket">/&gt;</span>
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="#hero" class="nav-logo" aria-label="Ferdaws Qaem, home">
+        <span class="logo-mark" aria-hidden="true">FQ</span><span class="logo-text">Ferdaws Qaem</span>
       </a>
       <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#about"    class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills"   class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Work</a></li>
+        <li><a href="#expertise" class="nav-link" data-section="expertise">Expertise</a></li>
         <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#credentials" class="nav-link" data-section="credentials">Credentials</a></li>
         <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
-        <li><a href="#contact"  class="nav-link" data-section="contact">Contact</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
       </ul>
-      <a href="CV/Ferdaws_Qaem_Resume.pdf" download class="btn btn-outline btn-sm nav-cta">
-        ⬇ Download CV
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">SUN</span><span class="theme-icon theme-icon--moon" aria-hidden="true">MOON</span>
+        </button>
+        <a href="CV/Ferdaws_Qaem_Resume.pdf" class="btn btn-secondary btn-sm nav-cv">Download CV</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      </div>
     </nav>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
   <main id="main-content">
-
-    <!-- ===== HERO ===== -->
     <section id="hero" class="hero" aria-label="Introduction">
-      <div class="hero-bg-grid" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
-
-      <div class="container hero-content">
-        <div class="hero-badge" aria-label="Status">
-          <span class="badge-dot" aria-hidden="true"></span>
-          Open to Internship Opportunities
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-glow hero-glow--one" aria-hidden="true"></div><div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="availability"><span aria-hidden="true"></span>Open to software engineering opportunities</div>
+          <p class="eyebrow">Computer Engineering · AI · Software · Embedded Systems</p>
+          <h1>I build reliable software across <span>AI, mobile, and embedded systems.</span></h1>
+          <p class="hero-summary">I am Ferdaws Qaem, a fourth-year Computer Engineering student who turns technical ideas into working products, from private local AI assistants to cross-platform apps and real-time IoT systems.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore selected work <span aria-hidden="true">→</span></a>
+            <a href="CV/Ferdaws_Qaem_Resume.pdf" class="btn btn-secondary">View CV</a>
+          </div>
+          <div class="hero-links" aria-label="Profile links">
+            <a href="https://github.com/Ferdaws-c" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="mailto:ferdawsqaem@gmail.com">Email</a>
+          </div>
         </div>
-
-        <h1 class="hero-name">
-          <span class="hero-greeting">Hi, I'm</span>
-          <span class="hero-full-name">Ferdaws Qaem</span>
-        </h1>
-
-        <p class="hero-tagline">
-          <span class="tagline-prefix">I build</span>
-          <span class="tagline-typed" id="tagline-typed" aria-live="polite"></span>
-          <span class="tagline-cursor" aria-hidden="true">|</span>
-        </p>
-
-        <p class="hero-summary">
-          4th-year Computer Engineering student at <strong>Istanbul Kültür University</strong>.<br />
-          Erasmus+ alumni at <strong>VSB–Technical University of Ostrava</strong>.<br />
-          Turning academic knowledge into real engineering — from mobile apps to embedded systems.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary btn-lg">View My Projects</a>
-          <a href="CV/Ferdaws_Qaem_Resume.pdf" download class="btn btn-outline btn-lg">⬇ Download CV</a>
-          <a href="#contact" class="btn btn-ghost btn-lg">Get In Touch</a>
-        </div>
-
-        <div class="hero-socials">
-          <a href="https://github.com/Ferdaws-c" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:ferdawsqaem@gmail.com" class="social-link" aria-label="Send email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+        <aside class="hero-panel" aria-label="Profile highlights">
+          <div class="hero-panel-head"><span>Profile snapshot</span><span class="status-code">AVAILABLE / 2026</span></div>
+          <div class="hero-panel-main">
+            <div class="code-window" aria-hidden="true">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><code><span class="code-muted">const</span> engineer = {
+  focus: [<span>"Local AI"</span>, <span>"Mobile"</span>, <span>"IoT"</span>],
+  languages: [<span>"Python"</span>, <span>"C++"</span>, <span>"Dart"</span>],
+  mindset: <span>"Build, test, improve"</span>
+};</code></pre>
+            </div>
+          </div>
+          <div class="profile-metrics"><div><strong>4</strong><span>featured projects</span></div><div><strong>2</strong><span>new credentials</span></div><div><strong>3</strong><span>engineering domains</span></div></div>
+          <div class="profile-note"><span class="profile-note-index">01</span><p>Microsoft AI Innovators program completer and Erasmus+ alumnus at VSB–Technical University of Ostrava.</p></div>
+        </aside>
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section" aria-label="About Me">
+    <section id="projects" class="section section--raised" aria-labelledby="projects-title">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Who I Am</span>
-          <h2 class="section-title">About Me</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p class="about-lead">
-              I'm a <strong>4th-year Computer Engineering student</strong> who builds things that matter — mobile apps used by real students, embedded systems that monitor real hardware, and algorithms practiced until they're second nature.
-            </p>
-            <p>
-              My academic journey has taken me from Istanbul to Ostrava through an <strong>Erasmus+ exchange</strong> at VSB–Technical University of Ostrava's Faculty of Electrical Engineering and Computer Science — an experience that sharpened both my technical skills and my ability to collaborate across cultures and time zones.
-            </p>
-            <p>
-              I work comfortably across <strong>Python, C, C++, Dart,</strong> and <strong>GDScript</strong>, applying OOP principles and choosing the right tool for the problem — not the trendiest one.
-            </p>
-          </div>
-          <div class="about-highlights reveal">
-            <div class="highlight-card">
-              <span class="highlight-icon" aria-hidden="true">🌍</span>
-              <div>
-                <strong>Erasmus+ Alumni</strong>
-                <span>VSB–TU Ostrava, Czech Republic</span>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-icon" aria-hidden="true">📱</span>
-              <div>
-                <strong>Mobile Developer</strong>
-                <span>Flutter / Dart · Cross-platform</span>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-icon" aria-hidden="true">⚙️</span>
-              <div>
-                <strong>Embedded / IoT Engineer</strong>
-                <span>C · Sensor Integration · Real-time</span>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-icon" aria-hidden="true">🎓</span>
-              <div>
-                <strong>Expected Graduation</strong>
-                <span>2027 · Istanbul Kültür University</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section section--alt" aria-label="Technical Skills">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">What I Know</span>
-          <h2 class="section-title">Technical Skills</h2>
-        </div>
-        <div class="skills-grid">
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">💻</span> Languages
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--primary">Python</span>
-              <span class="pill pill--primary">C</span>
-              <span class="pill pill--primary">C++</span>
-              <span class="pill pill--primary">Dart</span>
-              <span class="pill pill--primary">GDScript</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">📱</span> Mobile / UI
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--cyan">Flutter</span>
-              <span class="pill pill--cyan">Cross-platform Dev</span>
-              <span class="pill pill--cyan">Dart UI</span>
-              <span class="pill pill--cyan">Widget Composition</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">⚙️</span> Embedded / IoT
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--orange">Sensor Integration</span>
-              <span class="pill pill--orange">Alert Systems</span>
-              <span class="pill pill--orange">HW-SW Interfacing</span>
-              <span class="pill pill--orange">Real-time Polling</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">🧠</span> Paradigms
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--purple">OOP</span>
-              <span class="pill pill--purple">Data Structures</span>
-              <span class="pill pill--purple">Algorithms</span>
-              <span class="pill pill--purple">Event-driven Design</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">🛠️</span> Tools & Env
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--green">Git</span>
-              <span class="pill pill--green">GitHub</span>
-              <span class="pill pill--green">VS Code</span>
-              <span class="pill pill--green">GitHub Pages</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">🗂️</span> Project Management
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--amber">PMBOK</span>
-              <span class="pill pill--amber">Agile</span>
-              <span class="pill pill--amber">Trello</span>
-              <span class="pill pill--amber">Risk Management</span>
-            </div>
-          </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-category-title">
-              <span class="skill-icon" aria-hidden="true">🌐</span> Languages (Human)
-            </h3>
-            <div class="skill-pills">
-              <span class="pill pill--muted">Persian (Native)</span>
-              <span class="pill pill--muted">English (Professional)</span>
-              <span class="pill pill--muted">Turkish (Professional)</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section" aria-label="Featured Projects">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">What I've Built</span>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Each project represents a different domain — from mobile apps to embedded systems to algorithm design.</p>
+        <header class="section-header reveal"><div><p class="section-kicker">Selected work</p><h2 id="projects-title">Engineering ideas into working systems.</h2></div><p>Projects spanning private AI, mobile product development, embedded monitoring, and interactive learning.</p></header>
+        <div class="project-toolbar reveal" role="group" aria-label="Filter projects">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work</button><button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI</button><button class="filter-button" type="button" data-filter="mobile" aria-pressed="false">Mobile</button><button class="filter-button" type="button" data-filter="embedded" aria-pressed="false">Embedded</button><button class="filter-button" type="button" data-filter="interactive" aria-pressed="false">Interactive</button><span class="project-count" id="project-count" aria-live="polite">4 projects</span>
         </div>
         <div class="projects-grid">
-
-          <!-- Project 1: Local RAG AI Assistant -->
-          <article class="project-card project-card--featured reveal" id="project-rag">
-            <div class="project-thumbnail">
-              <img src="assets/images/project-previews/project-rag-ai.jpg" alt="Local RAG AI Assistant project thumbnail" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-card-header">
-                <div class="project-number" aria-hidden="true">01</div>
-                <div class="project-badge-featured" style="background:rgba(52,211,153,0.1);color:var(--clr-green);border-color:rgba(52,211,153,0.3);">AI Innovator – Summer Training Participant</div>
-              </div>
-              <div class="project-tags">
-                <span class="tag tag--python">Python</span>
-                <span class="tag">Local LLMs</span>
-                <span class="tag">RAG</span>
-                <span class="tag">Microsoft Foundry Local</span>
-              </div>
-              <h3 class="project-title">Local RAG AI Assistant</h3>
-              <p class="project-desc">
-                Built a Local Retrieval-Augmented Generation (RAG) AI application using Microsoft Foundry Local as part of a 1-month exclusive AI Innovator program by Microsoft.
-              </p>
-              <div class="project-highlights">
-                <div class="project-highlight">
-                  <span class="highlight-label">Program</span>
-                  <span>Microsoft Azure Developer Community — Summer Training Participant</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Focus</span>
-                  <span>Deploying private, local AI models with contextual data retrieval</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Outcome</span>
-                  <span>Fully functional local AI intelligence system without cloud dependency</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/Ferdaws-c/local-rag-intelligence-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Local RAG AI Assistant on GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View on GitHub
-                </a>
-                <a href="https://drive.google.com/file/d/1lNyXGFHMmbMe7b-jhc3UwWixI-JnVigW/view" target="_blank" rel="noopener noreferrer" class="btn btn-demo btn-sm" aria-label="Watch Local RAG AI Assistant demo video">
-                  ▶ Watch Demo
-                </a>
-                <a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/building-your-first-local-rag-application-with-foundry-local/4501968" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="Read Microsoft Tech Community Article">
-                  Read Article
-                </a>
-              </div>
-            </div>
+          <article class="project-card project-card--wide reveal" data-category="ai">
+            <a class="project-media" href="https://github.com/Ferdaws-c/local-rag-intelligence-system" target="_blank" rel="noopener noreferrer" aria-label="View Local RAG AI Assistant on GitHub"><img src="assets/images/project-previews/project-rag-ai.jpg" alt="Local RAG AI Assistant interface and knowledge retrieval workflow" /><span class="project-index">01</span><span class="project-open" aria-hidden="true">View project ↗</span></a>
+            <div class="project-content"><div class="project-meta"><span>AI engineering</span><span>Microsoft Foundry Local</span></div><h3>Local RAG AI Assistant</h3><p>A privacy-first Retrieval-Augmented Generation application that runs local models and answers questions from custom knowledge sources without relying on external cloud AI services.</p><ul class="project-results" role="list"><li>Local document ingestion and contextual retrieval</li><li>Python pipeline with local LLM orchestration</li><li>Capstone for Microsoft’s AI Innovators program</li></ul><div class="project-stack"><span>Python</span><span>RAG</span><span>Local LLMs</span></div><div class="project-actions"><a href="https://github.com/Ferdaws-c/local-rag-intelligence-system" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="https://drive.google.com/file/d/1lNyXGFHMmbMe7b-jhc3UwWixI-JnVigW/view" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/building-your-first-local-rag-application-with-foundry-local/4501968" target="_blank" rel="noopener noreferrer">Article ↗</a></div></div>
           </article>
-
-          <!-- Project 2: Campus Lost & Found -->
-          <article class="project-card reveal" id="project-campus">
-            <div class="project-thumbnail">
-              <img src="assets/images/project-previews/project-mobile-app.jpg" alt="Campus Lost and Found mobile app project thumbnail" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-card-header">
-                <div class="project-number" aria-hidden="true">02</div>
-                <div class="project-badge-featured" style="background:rgba(91,94,244,0.1);color:#818CF8;border-color:rgba(91,94,244,0.3);">Team Project 🤝</div>
-              </div>
-              <div class="project-tags">
-                <span class="tag tag--c">Backend</span>
-                <span class="tag tag--python">Python</span>
-                <span class="tag">OOP</span>
-                <span class="tag">Data Modelling</span>
-              </div>
-              <h3 class="project-title">Campus Lost &amp; Found</h3>
-              <p class="project-desc">
-                Team-built cross-platform mobile app for campus item reporting. My role: backend development — designing the data model, implementing item state logic (lost → found → claimed), and building the server-side logic powering search and filter functionality.
-              </p>
-              <div class="project-highlights">
-                <div class="project-highlight">
-                  <span class="highlight-label">My Role</span>
-                  <span>Backend development — data model, state logic &amp; server-side API</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Key Decision</span>
-                  <span>Structured item state machine (lost → found → claimed) for lifecycle tracking</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Outcome</span>
-                  <span>Practical experience in backend architecture &amp; data modelling</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/JoeMorningStarr/campus-lost-found-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Campus Lost and Found on GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View on GitHub
-                </a>
-              </div>
-            </div>
+          <article class="project-card reveal" data-category="mobile">
+            <a class="project-media" href="https://github.com/JoeMorningStarr/campus-lost-found-system" target="_blank" rel="noopener noreferrer" aria-label="View Campus Lost and Found on GitHub"><img src="assets/images/project-previews/project-mobile-app.jpg" alt="Campus Lost and Found mobile application screens" loading="lazy" /><span class="project-index">02</span><span class="project-open" aria-hidden="true">View project ↗</span></a>
+            <div class="project-content"><div class="project-meta"><span>Mobile product</span><span>Team project</span></div><h3>Campus Lost &amp; Found</h3><p>Cross-platform campus app for reporting lost items and browsing found-item listings. I led the backend data model, item state logic, and search and filter behavior.</p><div class="project-stack"><span>Flutter</span><span>Dart</span><span>Python</span><span>OOP</span></div><div class="project-actions"><a href="https://github.com/JoeMorningStarr/campus-lost-found-system" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>
           </article>
-
-          <!-- Project 3: HPC Temperature Alert -->
-          <article class="project-card project-card--featured reveal" id="project-hpc">
-            <div class="project-thumbnail">
-              <img src="assets/images/project-previews/project-iot-hpc.jpg" alt="HPC Temperature Alert System IoT project thumbnail" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-card-header">
-                <div class="project-number" aria-hidden="true">03</div>
-                <div class="project-badge-featured">Rare Skill ⭐</div>
-              </div>
-              <div class="project-tags">
-                <span class="tag tag--iot">IoT</span>
-                <span class="tag tag--c">Embedded C</span>
-                <span class="tag">Sensor Integration</span>
-                <span class="tag">Real-time</span>
-              </div>
-              <h3 class="project-title">HPC Temperature Alert System</h3>
-              <p class="project-desc">
-                Embedded IoT monitoring system for high-performance computing environments. Continuously reads dual thermal sensors, applies dynamic thresholds fetched from Supabase, and triggers configurable local alerts with non-blocking fault-tolerant architecture.
-              </p>
-              <div class="project-highlights">
-                <div class="project-highlight">
-                  <span class="highlight-label">Problem</span>
-                  <span>HPC hardware at risk from thermal overload without real-time monitoring</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Key Decision</span>
-                  <span>Ring buffer cache + exponential backoff for offline fault tolerance</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Outcome</span>
-                  <span>Real-time sensor polling &amp; hardware-software interfacing expertise</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/Ferdaws-c/hpc-temperature-alert-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View HPC Temperature Alert System on GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View on GitHub
-                </a>
-                <a href="https://drive.google.com/drive/folders/1XWIJjDj5uIibWSm3icXQ-X2YmviQtT7e?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-demo btn-sm" aria-label="Watch HPC Temperature Alert System demo video">
-                  ▶ Watch Demo
-                </a>
-              </div>
-            </div>
+          <article class="project-card reveal" data-category="embedded">
+            <a class="project-media" href="https://github.com/Ferdaws-c/hpc-temperature-alert-system" target="_blank" rel="noopener noreferrer" aria-label="View HPC Temperature Alert System on GitHub"><img src="assets/images/project-previews/project-iot-hpc.jpg" alt="Embedded IoT temperature monitoring project" loading="lazy" /><span class="project-index">03</span><span class="project-open" aria-hidden="true">View project ↗</span></a>
+            <div class="project-content"><div class="project-meta"><span>Embedded systems</span><span>Real-time monitoring</span></div><h3>HPC Temperature Alert System</h3><p>Fault-tolerant IoT monitor for high-performance computing environments with dual thermal sensors, dynamic thresholds, local alerts, caching, and exponential backoff.</p><div class="project-stack"><span>Embedded C</span><span>IoT</span><span>Supabase</span></div><div class="project-actions"><a href="https://github.com/Ferdaws-c/hpc-temperature-alert-system" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="https://drive.google.com/drive/folders/1XWIJjDj5uIibWSm3icXQ-X2YmviQtT7e?usp=drive_link" target="_blank" rel="noopener noreferrer">Demo ↗</a></div></div>
           </article>
-
-          <!-- Project 4: Risk Management Game -->
-          <article class="project-card reveal" id="project-risk">
-            <div class="project-thumbnail">
-              <img src="assets/images/project-previews/project-game-risk.jpg" alt="Risk Management Interactive Game project thumbnail" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-card-header">
-                <div class="project-number" aria-hidden="true">04</div>
-              </div>
-              <div class="project-tags">
-                <span class="tag tag--gdscript">GDScript</span>
-                <span class="tag">Gamification</span>
-                <span class="tag">PMBOK</span>
-                <span class="tag">Godot</span>
-              </div>
-              <h3 class="project-title">Risk Management Interactive Game</h3>
-              <p class="project-desc">
-                Educational game translating PMBOK risk management concepts — identification, analysis, response planning, monitoring — into branching game mechanics with a scoring system simulating real project risk scenarios.
-              </p>
-              <div class="project-highlights">
-                <div class="project-highlight">
-                  <span class="highlight-label">Problem</span>
-                  <span>Abstract PMBOK concepts are hard to internalize through reading alone</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Key Decision</span>
-                  <span>Branching decision tree + scoring to simulate real risk trade-offs</span>
-                </div>
-                <div class="project-highlight">
-                  <span class="highlight-label">Outcome</span>
-                  <span>Full build cycle: requirements → design → implementation → testing</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/Ferdaws-c/Crisis-cabinet" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Risk Management Game on GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View on GitHub
-                </a>
-                <a href="https://drive.google.com/file/d/1puMibRV9YfN7y5S8ousecnqIz7HpJsdU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-demo btn-sm" aria-label="Watch Crisis Cabinet Risk Management Game demo video">
-                  ▶ Watch Demo
-                </a>
-              </div>
-            </div>
+          <article class="project-card reveal" data-category="interactive">
+            <a class="project-media" href="https://github.com/Ferdaws-c/Crisis-cabinet" target="_blank" rel="noopener noreferrer" aria-label="View Risk Management Interactive Game on GitHub"><img src="assets/images/project-previews/project-game-risk.jpg" alt="Risk Management Interactive Game interface" loading="lazy" /><span class="project-index">04</span><span class="project-open" aria-hidden="true">View project ↗</span></a>
+            <div class="project-content"><div class="project-meta"><span>Interactive learning</span><span>Full build cycle</span></div><h3>Risk Management Interactive Game</h3><p>Educational game that turns PMBOK risk concepts into branching decisions, scoring, and simulated project trade-offs.</p><div class="project-stack"><span>Godot</span><span>GDScript</span><span>PMBOK</span></div><div class="project-actions"><a href="https://github.com/Ferdaws-c/Crisis-cabinet" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="https://drive.google.com/file/d/1puMibRV9YfN7y5S8ousecnqIz7HpJsdU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Demo ↗</a></div></div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" class="section section--alt" aria-label="Experience">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Where I've Worked &amp; Trained</span>
-          <h2 class="section-title">Experience</h2>
-        </div>
-        <div class="experience-timeline">
+    <section id="expertise" class="section" aria-labelledby="expertise-title"><div class="container"><header class="section-header reveal"><div><p class="section-kicker">Technical toolkit</p><h2 id="expertise-title">Breadth with an engineering core.</h2></div><p>I choose the stack around the problem, with an emphasis on clear architecture, reliable behavior, and maintainable implementation.</p></header><div class="expertise-grid">
+      <article class="expertise-card reveal"><span class="expertise-number">01</span><h3>AI Engineering</h3><p>Local inference, contextual retrieval, prompt design, and privacy-first RAG workflows.</p><div class="skill-list"><span>Python</span><span>RAG</span><span>Local LLMs</span><span>Foundry Local</span></div></article>
+      <article class="expertise-card reveal"><span class="expertise-number">02</span><h3>Mobile Development</h3><p>Cross-platform interfaces, reusable components, state logic, and product-focused UX.</p><div class="skill-list"><span>Flutter</span><span>Dart</span><span>Widget composition</span></div></article>
+      <article class="expertise-card reveal"><span class="expertise-number">03</span><h3>Embedded &amp; IoT</h3><p>Sensor integration, real-time polling, alerts, hardware-software interfaces, and resilient behavior.</p><div class="skill-list"><span>C</span><span>C++</span><span>IoT</span><span>Fault tolerance</span></div></article>
+      <article class="expertise-card reveal"><span class="expertise-number">04</span><h3>Software Foundations</h3><p>Object-oriented design, data structures, algorithms, event-driven systems, and version control.</p><div class="skill-list"><span>OOP</span><span>Algorithms</span><span>Git</span><span>GitHub</span></div></article>
+    </div></div></section>
 
-          <div class="timeline-item reveal" id="exp-microsoft">
-            <div class="timeline-dot" aria-hidden="true" style="border-color: var(--clr-green); box-shadow: 0 0 0 4px rgba(52,211,153,0.1);"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-period">Jun 2026 – Jul 2026</span>
-                <span class="timeline-location">📍 Remote</span>
-              </div>
-              <h3 class="timeline-title">AI Innovator – Summer Training Participant</h3>
-              <p class="timeline-institution">Microsoft Azure Developer Community</p>
-              <p class="timeline-desc">Participated in an exclusive 1-month program focused on deploying private, local AI models. Built a functional Local Retrieval-Augmented Generation (RAG) AI application using Microsoft Foundry Local.</p>
-              <div class="timeline-courses">
-                <span class="course-tag">Local LLMs</span>
-                <span class="course-tag">RAG</span>
-                <span class="course-tag">Python</span>
-                <span class="course-tag">Microsoft Foundry Local</span>
-              </div>
-            </div>
-          </div>
+    <section id="experience" class="section section--ink" aria-labelledby="experience-title"><div class="container experience-layout"><header class="section-header section-header--light reveal"><div><p class="section-kicker">Experience</p><h2 id="experience-title">Applied learning, shipped as a real AI system.</h2></div></header><article class="experience-card reveal"><div class="experience-date">Summer 2026</div><div class="experience-body"><p class="experience-org">Microsoft Turkey</p><h3>AI Innovators Internship Program</h3><p>Completed the program focused on building private, local AI applications. Developed an end-to-end RAG assistant with Python and Microsoft Foundry Local, covering local model deployment, document retrieval, prompt design, and AI application architecture.</p><div class="experience-tags"><span>Local AI</span><span>Python</span><span>RAG</span><span>Foundry Local</span></div></div><a href="#credentials" class="experience-link">View credential ↓</a></article></div></section>
 
-        </div>
-      </div>
-    </section>
+    <section id="credentials" class="section section--raised" aria-labelledby="credentials-title"><div class="container"><header class="section-header reveal"><div><p class="section-kicker">Credentials</p><h2 id="credentials-title">Recent learning, independently verifiable.</h2></div><p>Select a credential to view the full certificate. They are also referenced on my LinkedIn profile.</p></header><div class="credentials-grid">
+      <article class="credential-card reveal"><button class="credential-preview" type="button" data-certificate="assets/images/credentials/microsoft-ai-innovators-2026.jpg" data-title="Microsoft AI Innovators Internship Program" data-issuer="Microsoft Turkey · Summer 2026" aria-label="View Microsoft AI Innovators certificate"><img src="assets/images/credentials/microsoft-ai-innovators-2026.jpg" alt="Microsoft certificate of completion for the AI Innovators Internship Program awarded to Ferdaws Qaem" loading="lazy" /><span>Open certificate</span></button><div class="credential-content"><div class="credential-meta"><span>Microsoft Turkey</span><time datetime="2026-08-17">17 Aug 2026</time></div><h3>AI Innovators Internship Program</h3><p>Certificate of completion for the Summer 2026 AI Innovators Internship Program.</p><div class="credential-actions"><button type="button" class="text-button" data-certificate="assets/images/credentials/microsoft-ai-innovators-2026.jpg" data-title="Microsoft AI Innovators Internship Program" data-issuer="Microsoft Turkey · Summer 2026">View certificate</button><a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></article>
+      <article class="credential-card reveal"><button class="credential-preview" type="button" data-certificate="assets/images/credentials/hugging-face-agents-2026.png" data-title="Fundamentals of Agents" data-issuer="Hugging Face Agents Course · Unit 1" aria-label="View Hugging Face Fundamentals of Agents certificate"><img src="assets/images/credentials/hugging-face-agents-2026.png" alt="Hugging Face Certificate of Achievement for Fundamentals of Agents awarded to Ferdaws Qaem" loading="lazy" /><span>Open certificate</span></button><div class="credential-content"><div class="credential-meta"><span>Hugging Face</span><time datetime="2026-08-29">29 Aug 2026</time></div><h3>Fundamentals of Agents</h3><p>Completed Unit 1, Foundations of Agents, in the Hugging Face Agents Course.</p><div class="credential-actions"><button type="button" class="text-button" data-certificate="assets/images/credentials/hugging-face-agents-2026.png" data-title="Fundamentals of Agents" data-issuer="Hugging Face Agents Course · Unit 1">View certificate</button><a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></article>
+    </div></div></section>
 
-    <!-- ===== EDUCATION ===== -->
-    <section id="education" class="section" aria-label="Education">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Where I've Studied</span>
-          <h2 class="section-title">Education</h2>
-        </div>
-        <div class="education-timeline">
+    <section id="education" class="section" aria-labelledby="education-title"><div class="container"><header class="section-header reveal"><div><p class="section-kicker">Education</p><h2 id="education-title">Computer engineering with international perspective.</h2></div></header><div class="education-list">
+      <article class="education-item reveal"><div class="education-period">Expected 2027</div><div><h3>B.Sc. Computer Engineering</h3><p class="education-school">Istanbul Kültür University · Istanbul, Türkiye</p><p>Fourth-year student · GPA 3.04 / 4.00</p></div><div class="education-courses"><span>Data Structures &amp; Algorithms</span><span>Machine Learning</span><span>Operating Systems</span><span>Mobile Programming</span><span>Embedded Systems &amp; IoT</span></div></article>
+      <article class="education-item reveal"><div class="education-period">Sep 2025 — Jan 2026</div><div><h3>Erasmus+ Exchange</h3><p class="education-school">VSB–Technical University of Ostrava · Czech Republic</p><p>Faculty of Electrical Engineering and Computer Science.</p></div><div class="education-badge">International academic experience</div></article>
+    </div></div></section>
 
-          <div class="timeline-item reveal" id="edu-iku">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-period">2022 – 2027 (Expected)</span>
-                <span class="timeline-location">📍 Istanbul, Türkiye</span>
-              </div>
-              <h3 class="timeline-title">B.Sc. Computer Engineering</h3>
-              <p class="timeline-institution">Istanbul Kültür University</p>
-              <p class="timeline-desc">4th year (senior) &middot; <strong>GPA: 3.04/4.00</strong><br>Specializing in software engineering, embedded systems, and mobile development.</p>
-              <div class="timeline-courses">
-                <span class="course-tag">Data Structures & Algorithms</span>
-                <span class="course-tag">OOP</span>
-                <span class="course-tag">Mobile Programming</span>
-                <span class="course-tag">Embedded Systems & IoT</span>
-                <span class="course-tag">Machine Learning</span>
-                <span class="course-tag">Project Management (PMBOK)</span>
-                <span class="course-tag">Computer Networks</span>
-                <span class="course-tag">Operating Systems</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item timeline-item--erasmus reveal" id="edu-vsb">
-            <div class="timeline-dot timeline-dot--erasmus" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-period">Sep 2025 – Jan 2026</span>
-                <span class="timeline-location">📍 Ostrava, Czech Republic</span>
-              </div>
-              <div class="erasmus-badge" aria-label="Erasmus+ Exchange Program">
-                <span>🌍</span> Erasmus+ Exchange
-              </div>
-              <h3 class="timeline-title">Exchange Semester — Electrical Engineering & CS</h3>
-              <p class="timeline-institution">VSB – Technical University of Ostrava</p>
-              <p class="timeline-desc">Faculty of Electrical Engineering and Computer Science. International academic experience demonstrating adaptability, cross-cultural collaboration, and academic initiative.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section" aria-label="Contact">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Let's Talk</span>
-          <h2 class="section-title">Get In Touch</h2>
-          <p class="section-subtitle">I'm actively looking for software engineering internship opportunities. Whether you have a role, a question, or just want to connect — my inbox is open.</p>
-        </div>
-        <div class="contact-grid reveal">
-          <a href="mailto:ferdawsqaem@gmail.com" class="contact-card" id="contact-email" aria-label="Send email to Ferdaws">
-            <div class="contact-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-            </div>
-            <div class="contact-card-text">
-              <strong>Email</strong>
-              <span>ferdawsqaem@gmail.com</span>
-            </div>
-            <span class="contact-card-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="https://github.com/Ferdaws-c" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-github" aria-label="Visit Ferdaws GitHub profile">
-            <div class="contact-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </div>
-            <div class="contact-card-text">
-              <strong>GitHub</strong>
-              <span>github.com/Ferdaws-c</span>
-            </div>
-            <span class="contact-card-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-linkedin" aria-label="Visit Ferdaws LinkedIn profile">
-            <div class="contact-card-icon contact-card-icon--linkedin" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <div class="contact-card-text">
-              <strong>LinkedIn</strong>
-              <span>linkedin.com/in/ferdaws-qaem</span>
-            </div>
-            <span class="contact-card-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="tel:+905343586603" class="contact-card" id="contact-phone" aria-label="Call Ferdaws">
-            <div class="contact-card-icon contact-card-icon--phone" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            </div>
-            <div class="contact-card-text">
-              <strong>Phone</strong>
-              <span>+90 534 358 66 03</span>
-            </div>
-            <span class="contact-card-arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title"><div class="container contact-card reveal"><div><p class="section-kicker">Contact</p><h2 id="contact-title">Let’s build something useful.</h2><p>I am open to software engineering internships and collaborative technical projects.</p></div><div class="contact-actions"><a href="mailto:ferdawsqaem@gmail.com" class="btn btn-primary">Send an email <span aria-hidden="true">→</span></a><button class="btn btn-secondary" id="copy-email" type="button" data-email="ferdawsqaem@gmail.com">Copy email</button></div><div class="contact-details"><a href="mailto:ferdawsqaem@gmail.com">ferdawsqaem@gmail.com</a><a href="tel:+905343586603">+90 534 358 66 03</a><span>Istanbul, Türkiye</span></div></div></section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <a href="#hero" class="footer-logo" aria-label="Back to top">
-        <span class="logo-bracket">&lt;</span>FQ<span class="logo-bracket">/&gt;</span>
-      </a>
-      <p class="footer-copy">
-        Designed &amp; built by <strong>Ferdaws Qaem</strong> · 2026
-      </p>
-      <div class="footer-links">
-        <a href="https://github.com/Ferdaws-c" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-        <a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-        <a href="mailto:ferdawsqaem@gmail.com" aria-label="Email">Email</a>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer-inner"><a href="#hero" class="footer-brand"><span>FQ</span> Ferdaws Qaem</a><p>AI, software, and embedded systems portfolio · 2026</p><div><a href="https://github.com/Ferdaws-c" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/ferdaws-qaem" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
 
-  <!-- Back to top button -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
-  <!-- Main JS -->
+  <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="certificate-dialog-title"><div class="dialog-head"><div><p id="certificate-dialog-issuer"></p><h2 id="certificate-dialog-title">Certificate</h2></div><button type="button" class="dialog-close" id="dialog-close" aria-label="Close certificate viewer">Close</button></div><div class="dialog-image-wrap"><img id="certificate-dialog-image" src="" alt="" /></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

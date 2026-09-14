@@ -1,32 +1,44 @@
-# Ferdaws Qaem — Software Engineering Portfolio
+# Ferdaws Qaem Portfolio
 
-> 4th-year Computer Engineering student at Istanbul Kültür University.  
-> Erasmus+ alumni at VSB–Technical University of Ostrava.  
-> Seeking a software engineering internship.
+Personal engineering portfolio showcasing work across local AI, cross-platform mobile development, embedded IoT systems, and interactive software.
 
-## 🔗 Live Site
-**[ferdaws-c.github.io/portfolio](https://ferdaws-c.github.io/portfolio)** 
+**Live site:** [ferdaws-c.github.io/portfolio](https://ferdaws-c.github.io/portfolio/)
 
-## 🛠️ Built With
-- HTML5 (semantic)
-- Vanilla CSS (custom design system, dark mode)
-- Vanilla JavaScript (animations, interactivity)
-- Deployed via GitHub Pages
+## Highlights
 
-## 📂 Project Structure
-```
+- Filterable project portfolio with source, demo, and article links
+- Interactive certificate gallery for Microsoft and Hugging Face credentials
+- Responsive light and dark themes with saved user preference
+- Accessible navigation, keyboard focus states, reduced-motion support, and semantic markup
+- Downloadable ATS-friendly resume
+
+## Technology
+
+- Semantic HTML5
+- Modern CSS with custom properties and responsive layouts
+- Vanilla JavaScript for filtering, dialogs, themes, scroll state, and small interactions
+- GitHub Pages deployment
+
+## Project structure
+
+```text
 portfolio/
-├── index.html          ← Main page
-├── 404.html            ← Custom 404
+├── index.html
+├── 404.html
 ├── assets/
-│   ├── css/style.css   ← All styles
-│   ├── js/main.js      ← All scripts
-│   └── images/         ← Visual assets
-├── CV/                 ← Downloadable resume
+│   ├── css/style.css
+│   ├── js/main.js
+│   └── images/
+│       ├── credentials/
+│       └── project-previews/
+├── CV/
+│   ├── Ferdaws_Qaem_Resume.pdf
+│   └── generate_resume.py
 └── README.md
 ```
 
-## 📬 Contact
-- **Email:** ferdawsqaem@gmail.com
-- **GitHub:** [github.com/Ferdaws-c](https://github.com/Ferdaws-c)
-- **LinkedIn:** [linkedin.com/in/ferdaws-qaem](https://linkedin.com/in/ferdaws-qaem)
+## Contact
+
+- [LinkedIn](https://linkedin.com/in/ferdaws-qaem)
+- [GitHub](https://github.com/Ferdaws-c)
+- [Email](mailto:ferdawsqaem@gmail.com)
