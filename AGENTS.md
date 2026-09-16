@@ -77,6 +77,7 @@ Do not add a framework-generated directory, package manager, or build output unt
 ```text
 #hero
 #projects
+#expertise
 #experience
 #credentials
 #education
@@ -126,6 +127,23 @@ When changing the theme, update semantic tokens instead of scattering literal co
 - back-to-top visibility
 
 Keep JavaScript defensive: query an element, verify it exists, then attach behavior. Essential links, project descriptions, certificate images, and contact details must remain available when scripts fail.
+
+### Mobile layout and regression guards
+
+The September 2026 mobile update fixes actual horizontal overflow and compacts the phone layout. Preserve these decisions:
+
+- `.hero` must stay `position: relative` so its decorative grid and glows are bounded and clipped by the hero, not positioned against the whole page.
+- The single-column hero uses `minmax(0, 1fr)` and its children use `min-width: 0`; long code or labels must not force a wider viewport.
+- At 560px and below, headings, spacing, preview aspect ratios, contact padding, and profile metrics are optimized for phones.
+- The viewport meta includes `viewport-fit=cover`. Header, navigation, containers, toast, and back-to-top controls account for device safe-area insets.
+- Closed mobile navigation uses `visibility: hidden`, not opacity alone, so hidden links cannot receive keyboard focus.
+- The mobile menu focuses the first link on open, keeps keyboard focus within the header, closes on outside clicks or Escape, and restores focus on Escape.
+- Navigation and filter controls have 44px minimum touch targets. Additional text links use larger targets for coarse pointers.
+- Certificate dialogs keep the close control reachable and scroll their image region in short landscape viewports.
+- Reveal content is visible by default; JavaScript adds `.is-pending` only when scroll animation is supported.
+- CSS and JavaScript asset URLs include a version query. Update both versions together when publishing changes that must replace cached assets.
+
+Check 320, 360, 390, and 430px widths plus a short landscape viewport such as 667 × 375. Compare `document.documentElement.scrollWidth` with `window.innerWidth`; the page width must never exceed the viewport. Browser viewport testing is not a substitute for a real iOS Safari smoke test when an iPhone is available.
 
 ## 5. Content sources and synchronization
 
@@ -516,4 +534,4 @@ Never report deployment, testing, visual inspection, or link verification unless
 
 ---
 
-Last documentation review: 14 September 2026. Update this guide whenever the architecture, deployment process, CV generator, canonical content model, or validation workflow changes.
+Last documentation review: 16 September 2026. Update this guide whenever the architecture, deployment process, CV generator, canonical content model, or validation workflow changes.

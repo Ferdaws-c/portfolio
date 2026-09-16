@@ -39,37 +39,57 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 updateScrollUI();
 
-function setMenu(open) {
+function setMenu(open, restoreFocus = false) {
+  const wasOpen = navLinks.classList.contains("is-open");
   navLinks.classList.toggle("is-open", open);
   hamburger.classList.toggle("is-active", open);
   hamburger.setAttribute("aria-expanded", String(open));
   hamburger.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
   body.classList.toggle("menu-open", open);
+  if (open && !wasOpen) navLinks.querySelector("a")?.focus();
+  if (!open && wasOpen && restoreFocus) hamburger.focus();
 }
 
 hamburger.addEventListener("click", () => setMenu(!navLinks.classList.contains("is-open")));
 navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
-document.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenu(false); });
+document.addEventListener("click", (event) => {
+  if (navLinks.classList.contains("is-open") && !header.contains(event.target)) setMenu(false, true);
+});
+document.addEventListener("keydown", (event) => {
+  if (!navLinks.classList.contains("is-open")) return;
+  if (event.key === "Escape") { event.preventDefault(); setMenu(false, true); }
+  if (event.key === "Tab") {
+    const controls = [...header.querySelectorAll("a, button")].filter((element) => getComputedStyle(element).visibility !== "hidden" && element.getClientRects().length);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+});
 window.addEventListener("resize", () => { if (window.innerWidth > 820) setMenu(false); });
 
 const sections = [...document.querySelectorAll("main section[id]")];
 const sectionLinks = [...document.querySelectorAll(".nav-link")];
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    sectionLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.section === entry.target.id));
-  });
-}, { rootMargin: "-35% 0px -55%", threshold: 0 });
-sections.forEach((section) => sectionObserver.observe(section));
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      sectionLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.section === entry.target.id));
+    });
+  }, { rootMargin: "-35% 0px -55%", threshold: 0 });
+  sections.forEach((section) => sectionObserver.observe(section));
+}
 
 const revealElements = document.querySelectorAll(".reveal");
 if (prefersReducedMotion || !("IntersectionObserver" in window)) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 } else {
+  revealElements.forEach((element) => element.classList.add("is-pending"));
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("is-visible");
+      entry.target.classList.remove("is-pending");
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -35px" });
