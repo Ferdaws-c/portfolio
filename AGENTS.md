@@ -140,7 +140,9 @@ The September 2026 mobile update fixes actual horizontal overflow and compacts t
 - The mobile menu focuses the first link on open, keeps keyboard focus within the header, closes on outside clicks or Escape, and restores focus on Escape.
 - Navigation and filter controls have 44px minimum touch targets. Additional text links use larger targets for coarse pointers.
 - Certificate dialogs keep the close control reachable and scroll their image region in short landscape viewports.
-- Reveal content is visible by default; JavaScript adds `.is-pending` only when scroll animation is supported.
+- Reveal content is visible by default. Mobile/touch devices always render every section immediately; reveal-on-scroll is a desktop-only enhancement. A timeout also clears any desktop `.is-pending` state if observer callbacks fail.
+- Safari compatibility fallbacks precede newer viewport, `color-mix()`, mask, and backdrop-filter declarations. Keep the prefixed mask/backdrop rules and the `vh` fallbacks when editing these components.
+- The certificate viewer opens the image directly in a new tab when the native dialog API is unavailable.
 - CSS and JavaScript asset URLs include a version query. Update both versions together when publishing changes that must replace cached assets.
 
 Check 320, 360, 390, and 430px widths plus a short landscape viewport such as 667 × 375. Compare `document.documentElement.scrollWidth` with `window.innerWidth`; the page width must never exceed the viewport. Browser viewport testing is not a substitute for a real iOS Safari smoke test when an iPhone is available.
@@ -534,4 +536,4 @@ Never report deployment, testing, visual inspection, or link verification unless
 
 ---
 
-Last documentation review: 16 September 2026. Update this guide whenever the architecture, deployment process, CV generator, canonical content model, or validation workflow changes.
+Last documentation review: 21 September 2026. Update this guide whenever the architecture, deployment process, CV generator, canonical content model, or validation workflow changes.

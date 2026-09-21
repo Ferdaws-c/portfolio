@@ -9,6 +9,7 @@ const themeToggle = document.getElementById("theme-toggle");
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isMobileOrTouch = window.matchMedia("(max-width: 820px), (pointer: coarse)").matches;
 
 function setTheme(theme, persist = true) {
   root.dataset.theme = theme;
@@ -81,7 +82,7 @@ if ("IntersectionObserver" in window) {
 }
 
 const revealElements = document.querySelectorAll(".reveal");
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+if (prefersReducedMotion || isMobileOrTouch || !("IntersectionObserver" in window)) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 } else {
   revealElements.forEach((element) => element.classList.add("is-pending"));
@@ -94,6 +95,14 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -35px" });
   revealElements.forEach((element) => revealObserver.observe(element));
+
+  // Never leave content hidden if a browser delays or drops observer callbacks.
+  window.setTimeout(() => {
+    revealElements.forEach((element) => {
+      element.classList.add("is-visible");
+      element.classList.remove("is-pending");
+    });
+  }, 1800);
 }
 
 const filterButtons = [...document.querySelectorAll(".filter-button")];
@@ -136,6 +145,10 @@ const certificateIssuer = document.getElementById("certificate-dialog-issuer");
 const dialogClose = document.getElementById("dialog-close");
 
 function openCertificate(button) {
+  if (typeof certificateDialog.showModal !== "function") {
+    window.open(button.dataset.certificate, "_blank", "noopener,noreferrer");
+    return;
+  }
   certificateImage.src = button.dataset.certificate;
   certificateImage.alt = `${button.dataset.title} certificate awarded to Ferdaws Qaem`;
   certificateTitle.textContent = button.dataset.title;
