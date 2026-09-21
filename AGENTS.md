@@ -143,6 +143,7 @@ The September 2026 mobile update fixes actual horizontal overflow and compacts t
 - Reveal content is visible by default. Mobile/touch devices always render every section immediately; reveal-on-scroll is a desktop-only enhancement. A timeout also clears any desktop `.is-pending` state if observer callbacks fail.
 - Safari compatibility fallbacks precede newer viewport, `color-mix()`, mask, and backdrop-filter declarations. Keep the prefixed mask/backdrop rules and the `vh` fallbacks when editing these components.
 - The certificate viewer opens the image directly in a new tab when the native dialog API is unavailable.
+- Portfolio images include intrinsic `width` and `height` to reserve layout space. Project previews are compressed JPEGs; preserve useful visual quality while avoiding multi-megabyte thumbnails. Keep only the first project preview eager and load later images lazily with asynchronous decoding.
 - CSS and JavaScript asset URLs include a version query. Update both versions together when publishing changes that must replace cached assets.
 
 Check 320, 360, 390, and 430px widths plus a short landscape viewport such as 667 × 375. Compare `document.documentElement.scrollWidth` with `window.innerWidth`; the page width must never exceed the viewport. Browser viewport testing is not a substitute for a real iOS Safari smoke test when an iPhone is available.
