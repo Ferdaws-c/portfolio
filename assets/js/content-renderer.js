@@ -43,7 +43,7 @@ if(preview){
 }
 (async()=>{
  try{
-  const response=await fetch("content/portfolio.json");if(!response.ok)throw new Error("Fallback unavailable");const fallback=await response.json();render(fallback);
+  const response=await fetch("content/portfolio.json",{cache:"no-cache"});if(!response.ok)throw new Error("Fallback unavailable");const fallback=await response.json();render(fallback);
   if(window.PortfolioAPI.configured()){
    const remote=await window.PortfolioAPI.read();
    if(remote)render(remote.content);

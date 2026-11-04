@@ -360,7 +360,7 @@ p { color: var(--text-soft); }
 }
 @media (hover: none) { .project-open { opacity: 1; transform: none; } }
 .portrait-holder { padding: 1.25rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg,var(--surface-2),var(--surface)); }
-.portrait-holder img { width: 100%; max-height: 320px; aspect-ratio: 4 / 3; border-radius: var(--radius-md); object-fit: cover; object-position: center 30%; }
+.portrait-holder img { width: min(100%, 240px); height: auto; margin-inline: auto; aspect-ratio: 3 / 4; border-radius: var(--radius-md); object-fit: cover; object-position: center; }
 #photo-placeholder { min-height: 170px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .5rem; text-align: center; }
 #photo-initials { display: grid; place-items: center; width: 76px; height: 76px; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--blue); background: var(--bg); font-family: Manrope,system-ui,sans-serif; font-size: 1.6rem; }
 #photo-placeholder > span:last-child { color: var(--text-muted); font-size: .75rem; }
