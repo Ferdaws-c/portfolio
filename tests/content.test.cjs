@@ -4,7 +4,7 @@ const fs=require("node:fs"),vm=require("node:vm"),path=require("node:path");
 const root=path.join(__dirname,"..");
 const context={URL,console};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(root,"assets/js/content-core.js"),"utf8"),context);
 const C=context.PortfolioCore,base=JSON.parse(fs.readFileSync(path.join(root,"content/portfolio.json"),"utf8"));
-test("existing profile and all four projects survive migration",()=>{assert.equal(C.validate(base),base);assert.equal(base.projects.length,4);assert.equal(base.cvs[0].url,"CV/Ferdaws_Qaem_Resume.pdf");});
+test("existing profile and all four projects survive migration",()=>{assert.equal(C.validate(base),base);assert.equal(base.projects.length,4);assert.equal(base.cvs[0].url.split("?")[0],"CV/Ferdaws_Qaem_Resume.pdf");});
 test("reject executable, protocol-relative, traversal and HTML URLs",()=>{for(const url of ["javascript:alert(1)","data:text/html,abc","//evil.example","CV/../secret","http://evil.example","https://good.example/<script>","assets/images/../../x"])assert.throws(()=>C.url(url));});
 test("allow HTTPS upload URLs and old repository paths",()=>{for(const url of ["https://project.supabase.co/storage/v1/object/public/portfolio-media/user/test.pdf","CV/Ferdaws_Qaem_Resume.pdf","assets/images/project-previews/project-rag-ai.jpg?v=1"])assert.equal(C.url(url),url);});
 test("escape content and link labels instead of injecting markup",()=>{assert.equal(C.escape('<script a="x">&'),"&lt;script a=&quot;x&quot;&gt;&amp;");assert.ok(!C.link("https://example.com","<img onerror=alert(1)>").includes("<img"));});

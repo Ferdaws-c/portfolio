@@ -20,6 +20,8 @@ The primary public section list now also includes `#cvs`. The portrait holder sh
 
 The current owner-supplied portrait is `assets/images/profile/ferdaws-qaem.jpg`, referenced by both the HTML fallback and bundled profile JSON. Preserve its vertical framing so the head and shoulders remain visible on phones and desktop. Revalidate the bundled JSON on page load when updating these default assets.
 
+**Current CV override (4 November 2026):** `CV/Ferdaws_Qaem_Resume.pdf` is now the exact owner-supplied photo CV, originally named `Ferdaws_Qaem_Resume_With_Photo.pdf`. It is not generated from the legacy Python script. Preserve the supplied PDF bytes unless asked to edit the document. The old generator now writes `CV/Ferdaws_Qaem_Resume_Generated.pdf` so it cannot overwrite the active CV. This override supersedes the older generator/source-of-truth instructions below. CV links include a version query to refresh cached copies; preserve the canonical PDF path for previously shared links.
+
 Published content and media live in Supabase after activation; they do not automatically commit to GitHub or update the Python generator. Manually reconcile facts when revising CV contents. Keep the bundled JSON current with reviewed exports; it is used during backend outages. An upload is publicly accessible before publishing. Removing a reference does not delete the stored file, which preserves history.
 
 The implementation is prepared without a configured Supabase project. Do not claim real authentication, upload, database permissions, or publishing were verified until the owner runs setup and live acceptance checks. Node tests with mocked auth cannot prove deployed RLS.

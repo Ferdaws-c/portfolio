@@ -20,7 +20,8 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parent
-OUTPUT = ROOT / "Ferdaws_Qaem_Resume.pdf"
+# The published PDF is owner-supplied. Never overwrite it with this legacy template.
+OUTPUT = ROOT / "Ferdaws_Qaem_Resume_Generated.pdf"
 
 NAVY = colors.HexColor("#0B1F33")
 BLUE = colors.HexColor("#1769AA")

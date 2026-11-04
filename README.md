@@ -18,7 +18,7 @@ Open [the editor](https://ferdaws-c.github.io/portfolio/admin/) to manage your a
 
 **Activation required:** follow [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md) to create the Supabase project, run the SQL migration, create your administrator email/password, and add the public configuration. No account or backend is preconfigured. Before activation, local exploration saves drafts on the current device only.
 
-The website remains on GitHub Pages. Supabase supplies secure account access, published content, history, and public file uploads. Layout/code changes remain in GitHub; dashboard publishing updates the database. The original PDF generator still manages only the original general CV.
+The website remains on GitHub Pages. Supabase supplies secure account access, published content, history, and public file uploads. Layout/code changes remain in GitHub; dashboard publishing updates the database. The current default PDF is the owner-supplied photo CV. The legacy Python generator writes a separate `CV/Ferdaws_Qaem_Resume_Generated.pdf` and must not replace the active download.
 
 Validation: `node --test tests/content.test.cjs`.
 

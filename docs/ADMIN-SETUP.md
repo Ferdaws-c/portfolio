@@ -39,7 +39,7 @@ Visit https://ferdaws-c.github.io/portfolio/admin/ and use your administrator em
 - Upload a portrait or a new CV PDF. Uploads are public immediately; use public portfolio files only.
 - Choose exactly one default CV. The hero and navigation buttons use it.
 - Publish to create the first database version. Later edits appear on the next visitor page load, without another GitHub deployment.
-- The current generator PDF remains available at its original URL.
+- The current owner-supplied photo CV remains available at the stable `CV/Ferdaws_Qaem_Resume.pdf` URL.
 
 Before setup, the admin page offers an explicitly local editor for draft exploration. That mode cannot upload, sign in, or publish. It is not a security bypass.
 
@@ -57,7 +57,7 @@ Only the owner can edit, but visitors can read published content and media. An o
 
 Use a clear title and target field, for example “AI Engineering CV”, “Software Engineering CV”, or “Embedded Systems CV”. Upload a different PDF for each when available; do not relabel one file as if it were a tailored CV. The initial library contains only the existing actual CV.
 
-The editor uploads and organizes PDFs; it does not rewrite the PDF contents or automatically regenerate tailored CVs. The Python generator remains the editable source for the original general CV.
+The editor uploads and organizes PDFs; it does not rewrite their contents or automatically regenerate tailored CVs. The default download is the exact owner-supplied photo CV. The older Python template now writes `CV/Ferdaws_Qaem_Resume_Generated.pdf` separately so running it cannot overwrite the supplied document.
 
 ## How appearance is protected
 
