@@ -12,7 +12,17 @@ Personal engineering portfolio showcasing work across local AI, cross-platform m
 - Accessible navigation, keyboard focus states, reduced-motion support, and semantic markup
 - Downloadable ATS-friendly resume
 
-## Technology
+## Portfolio Studio
+
+Open [the editor](https://ferdaws-c.github.io/portfolio/admin/) to manage your about information, portrait, projects, education, and multiple CV PDFs by field. Structured fields preserve the site's layout. Drafts can be previewed before publishing, and previous published versions can be restored.
+
+**Activation required:** follow [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md) to create the Supabase project, run the SQL migration, create your administrator email/password, and add the public configuration. No account or backend is preconfigured. Before activation, local exploration saves drafts on the current device only.
+
+The website remains on GitHub Pages. Supabase supplies secure account access, published content, history, and public file uploads. Layout/code changes remain in GitHub; dashboard publishing updates the database. The original PDF generator still manages only the original general CV.
+
+Validation: `node --test tests/content.test.cjs`.
+
+## Website technology
 
 - Semantic HTML5
 - Modern CSS with custom properties and responsive layouts

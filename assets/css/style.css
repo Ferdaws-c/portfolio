@@ -48,6 +48,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 * { margin: 0; }
 html { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 24px); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
@@ -358,6 +359,19 @@ p { color: var(--text-soft); }
   .hero-links a, .project-actions a, .credential-actions a, .text-button, .contact-details a, .footer-inner > div a { display: inline-flex; align-items: center; min-height: 44px; }
 }
 @media (hover: none) { .project-open { opacity: 1; transform: none; } }
+.portrait-holder { padding: 1.25rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg,var(--surface-2),var(--surface)); }
+.portrait-holder img { width: 100%; max-height: 320px; aspect-ratio: 4 / 3; border-radius: var(--radius-md); object-fit: cover; object-position: center 30%; }
+#photo-placeholder { min-height: 170px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .5rem; text-align: center; }
+#photo-initials { display: grid; place-items: center; width: 76px; height: 76px; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--blue); background: var(--bg); font-family: Manrope,system-ui,sans-serif; font-size: 1.6rem; }
+#photo-placeholder > span:last-child { color: var(--text-muted); font-size: .75rem; }
+.cv-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 1.25rem; }
+.cv-card { min-width: 0; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--surface); }
+.cv-card h3 { margin-bottom: .8rem; overflow-wrap: anywhere; }
+.cv-card p { margin-bottom: 1rem; }
+.cv-card a { display: inline-flex; align-items: center; min-height: 44px; color: var(--blue); font-weight: 700; }
+.hero-copy, .project-content, .education-item > div, .cv-card { overflow-wrap: anywhere; }
+.preview-banner { position: fixed; z-index: 2000; bottom: 0; inset-inline: 0; padding: .55rem; background: var(--blue-strong); color: white; text-align: center; font-size: .75rem; }
+.project-card:not(:has(.project-media)) { grid-template-columns: 1fr; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }

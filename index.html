@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260921-ios" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20261104" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -38,6 +38,7 @@
         <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
         <li><a href="#credentials" class="nav-link" data-section="credentials">Credentials</a></li>
         <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#cvs" class="nav-link" data-section="cvs">CVs</a></li>
         <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -70,6 +71,7 @@
           </div>
         </div>
         <aside class="hero-panel" aria-label="Profile highlights">
+          <div class="portrait-holder"><img id="profile-photo" alt="" hidden decoding="async" /><div id="photo-placeholder"><span id="photo-initials">FQ</span><p>Ferdaws Qaem</p><span>AI · Software · Embedded systems</span></div></div>
           <div class="hero-panel-head"><span>Profile snapshot</span><span class="status-code">AVAILABLE / 2026</span></div>
           <div class="hero-panel-main">
             <div class="code-window" aria-hidden="true">
@@ -133,6 +135,8 @@
       <article class="education-item reveal"><div class="education-period">Sep 2025 — Jan 2026</div><div><h3>Erasmus+ Exchange</h3><p class="education-school">VSB–Technical University of Ostrava · Czech Republic</p><p>Faculty of Electrical Engineering and Computer Science.</p></div><div class="education-badge">International academic experience</div></article>
     </div></div></section>
 
+    <section id="cvs" class="section section--raised" aria-labelledby="cvs-title"><div class="container"><header class="section-header"><div><p class="section-kicker">CV library</p><h2 id="cvs-title">Find the right perspective.</h2></div><p>Browse my CVs by engineering field.</p></header><div id="cv-list" class="cv-grid"><article class="cv-card"><p class="section-kicker">General engineering · Default</p><h3>Engineering CV</h3><p>Experience across AI, software, mobile development, and embedded systems.</p><a href="CV/Ferdaws_Qaem_Resume.pdf">View CV ↗</a></article></div></div></section>
+
     <section id="contact" class="section contact-section" aria-labelledby="contact-title"><div class="container contact-card reveal"><div><p class="section-kicker">Contact</p><h2 id="contact-title">Let’s build something useful.</h2><p>I am open to software engineering internships and collaborative technical projects.</p></div><div class="contact-actions"><a href="mailto:ferdawsqaem@gmail.com" class="btn btn-primary">Send an email <span aria-hidden="true">→</span></a><button class="btn btn-secondary" id="copy-email" type="button" data-email="ferdawsqaem@gmail.com">Copy email</button></div><div class="contact-details"><a href="mailto:ferdawsqaem@gmail.com">ferdawsqaem@gmail.com</a><a href="tel:+905343586603">+90 534 358 66 03</a><span>Istanbul, Türkiye</span></div></div></section>
   </main>
 
@@ -141,6 +145,10 @@
   <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="certificate-dialog-title"><div class="dialog-head"><div><p id="certificate-dialog-issuer"></p><h2 id="certificate-dialog-title">Certificate</h2></div><button type="button" class="dialog-close" id="dialog-close" aria-label="Close certificate viewer">Close</button></div><div class="dialog-image-wrap"><img id="certificate-dialog-image" src="" alt="" decoding="async" /></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="assets/js/main.js?v=20260921-ios" defer></script>
+  <script src="assets/js/cms-config.js?v=20261104" defer></script>
+  <script src="assets/js/content-core.js?v=20261104" defer></script>
+  <script src="assets/js/cms-api.js?v=20261104" defer></script>
+  <script src="assets/js/content-renderer.js?v=20261104" defer></script>
+  <script src="assets/js/main.js?v=20261104" defer></script>
 </body>
 </html>

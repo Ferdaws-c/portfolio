@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="same-origin">
+<title>Portfolio Studio | Ferdaws Qaem</title>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261104"><link rel="stylesheet" href="studio.css?v=20261104">
+</head><body class="studio">
+<header class="studio-header"><a href="../" class="footer-brand"><span>FQ</span> Portfolio Studio</a><div><a href="../">View website ↗</a><button id="signout" hidden>Sign out</button></div></header>
+<main class="studio-main">
+<section id="welcome" class="welcome">
+<p class="section-kicker">Your portfolio, your story</p><h1>Keep your work<br><span>up to date.</span></h1>
+<p>Edit your content in one place. The website takes care of the layout.</p>
+<form id="login" class="login-card"><h2>Sign in</h2><p>Use your administrator email and password.</p>
+<label>Email<input name="email" type="email" autocomplete="username" required></label>
+<label>Password<input name="password" type="password" autocomplete="current-password" required minlength="8"></label>
+<button class="btn btn-primary" type="submit">Sign in to edit</button></form>
+<aside id="setup" class="setup-card" hidden><h2>One-time setup</h2><p>Connect Supabase to enable secure sign-in, uploads, and publishing. Your current public website continues working.</p><a href="https://github.com/Ferdaws-c/portfolio/blob/main/docs/ADMIN-SETUP.md" target="_blank" rel="noopener noreferrer">Read setup instructions ↗</a><button id="local-edit" type="button">Explore the editor locally</button><p>Local mode saves drafts on this device only. Publishing and uploads require sign-in.</p></aside>
+</section>
+<section id="editor" hidden>
+<div class="editor-heading"><div><p class="section-kicker">Content workspace</p><h1>Your next update.</h1><p id="account"></p></div><span id="revision" class="revision"></span></div>
+<div class="editor-actions"><button id="preview-toggle" class="btn btn-secondary">Show preview</button><button id="export" class="btn btn-secondary">Export backup</button><button id="restore" class="btn btn-secondary">Restore device draft</button><button id="discard" class="btn btn-secondary">Discard draft</button><button id="history" class="btn btn-secondary">Published history</button><button id="publish" class="btn btn-primary">Publish changes</button></div>
+<p class="studio-note">Drafts save on this device. “Publish changes” updates the website for everyone. Uploaded files are public, even before publishing.</p>
+<div id="history-list" hidden></div>
+<div class="workspace"><div><nav id="tabs" aria-label="Content sections"><button data-tab="profile" class="selected">About & photo</button><button data-tab="projects">Projects</button><button data-tab="education">Education</button><button data-tab="cvs">CV library</button></nav>
+<form id="content-form"><div id="fields"></div></form></div>
+<aside id="preview-panel" hidden><iframe id="preview" title="Draft portfolio preview" src="../?preview=1"></iframe></aside></div>
+</section>
+<p id="status" role="status" aria-live="polite"></p>
+</main>
+<script src="../assets/js/cms-config.js"></script><script src="../assets/js/content-core.js"></script><script src="../assets/js/cms-api.js"></script><script src="studio.js"></script>
+</body></html>
+

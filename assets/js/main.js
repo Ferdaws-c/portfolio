@@ -106,7 +106,6 @@ if (prefersReducedMotion || isMobileOrTouch || !("IntersectionObserver" in windo
 }
 
 const filterButtons = [...document.querySelectorAll(".filter-button")];
-const projectCards = [...document.querySelectorAll(".project-card")];
 const projectCount = document.getElementById("project-count");
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -117,7 +116,7 @@ filterButtons.forEach((button) => {
       item.setAttribute("aria-pressed", String(active));
     });
     let visibleCount = 0;
-    projectCards.forEach((card) => {
+    document.querySelectorAll(".project-card").forEach((card) => {
       const visible = filter === "all" || card.dataset.category === filter;
       card.hidden = !visible;
       if (visible) visibleCount += 1;
@@ -126,8 +125,13 @@ filterButtons.forEach((button) => {
   });
 });
 
-if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
-  projectCards.forEach((card) => {
+function initializeProjectCards() {
+  filterButtons.forEach(button => { button.classList.toggle("is-active", button.dataset.filter === "all"); button.setAttribute("aria-pressed", String(button.dataset.filter === "all")); });
+  projectCount.textContent = `${document.querySelectorAll(".project-card").length} projects`;
+  if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  document.querySelectorAll(".project-card").forEach((card) => {
+    if (card.dataset.tiltReady) return;
+    card.dataset.tiltReady = "true";
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
       const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -2.2;
@@ -136,7 +140,10 @@ if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
     });
     card.addEventListener("pointerleave", () => { card.style.transform = ""; });
   });
+  }
 }
+initializeProjectCards();
+document.addEventListener("portfolio:rendered", initializeProjectCards);
 
 const certificateDialog = document.getElementById("certificate-dialog");
 const certificateImage = document.getElementById("certificate-dialog-image");
