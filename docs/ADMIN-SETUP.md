@@ -2,6 +2,8 @@
 
 The site stays on GitHub Pages. Supabase provides email/password sign-in, published content, version history, and public PDF/image uploads. No password is stored in this repository.
 
+**Current connection (4 November 2026):** the owner's public URL and publishable key are configured for project `xiddxrmulugecfhylzll`. Email authentication is enabled, public sign-ups are disabled, the content table is readable, and anonymous access to the administrator table is denied. There are no published content rows yet. Continue at **3. First sign-in and publish** if you already created your administrator user and inserted its UUID. Do not rerun the first-install migration on the existing tables.
+
 ## 1. Create Supabase
 
 1. Create a project at https://supabase.com/dashboard. Choose your own project/database password; do not paste it in chat or commit it.

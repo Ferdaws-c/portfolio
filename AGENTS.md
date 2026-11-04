@@ -9,7 +9,7 @@ This section supersedes older statements below about hand-authored content owner
 - `content/portfolio.json`: bundled fallback and first-publish seed for profile, projects, education, and CV library. Existing HTML also remains as a no-script fallback.
 - `assets/js/content-core.js`: shared validation, safe URLs, and HTML escaping. Preserve these boundaries; do not introduce arbitrary HTML fields.
 - `assets/js/content-renderer.js`: managed content rendering, same-origin draft preview messaging, fallback then optional database loading. It emits `portfolio:rendered`; interaction code must handle newly rendered project cards.
-- `assets/js/cms-config.js`: only public Supabase URL and public publishable/anon key. It ships blank until the owner completes setup. Never commit passwords or service-role keys.
+- `assets/js/cms-config.js`: owner-supplied public Supabase URL and publishable key, connected to project `xiddxrmulugecfhylzll`. Never commit passwords or service-role keys.
 - `assets/js/cms-api.js`: email/password auth, in-memory tokens, refresh, administrator membership check, uploads, publish RPC, and history reads.
 - `admin/index.html`, `admin/studio.js`, `admin/studio.css`: editor forms, local drafts, preview iframe, ordering, multiple CVs, photo upload, publishing and history. Local exploration mode has no upload or publish access.
 - `supabase/setup.sql`: first-install backend migration. Server-side administrator allowlist, RLS, public read-only content, public media bucket with admin-only inserts, atomic publishing with version checks, and administrator-only version history.
@@ -24,7 +24,9 @@ The current owner-supplied portrait is `assets/images/profile/ferdaws-qaem.jpg`,
 
 Published content and media live in Supabase after activation; they do not automatically commit to GitHub or update the Python generator. Manually reconcile facts when revising CV contents. Keep the bundled JSON current with reviewed exports; it is used during backend outages. An upload is publicly accessible before publishing. Removing a reference does not delete the stored file, which preserves history.
 
-The implementation is prepared without a configured Supabase project. Do not claim real authentication, upload, database permissions, or publishing were verified until the owner runs setup and live acceptance checks. Node tests with mocked auth cannot prove deployed RLS.
+The owner has supplied the Supabase public configuration. Anonymous database/auth configuration checks can be performed without their password. Do not claim authenticated uploads, administrator membership, or publishing were verified until the owner signs in and completes the live acceptance checks. Node tests with mocked auth cannot prove deployed RLS.
+
+Connection checks on 4 November 2026 confirmed email sign-in enabled, public signup disabled, public content SELECT working (no published rows yet), and anonymous administrator-table reads denied. Do not follow the API's generic privilege-grant hint: that denial is intentional. The next owner action is to sign in at `/admin/`, review the current seed, and publish the first version.
 
 Run `node --test tests/content.test.cjs`, syntax-check all changed JS, and test admin preview plus public filters at phone/desktop widths. Use the existing GitHub Pages deployment; do not register another hosting service for this project.
 

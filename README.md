@@ -16,7 +16,7 @@ Personal engineering portfolio showcasing work across local AI, cross-platform m
 
 Open [the editor](https://ferdaws-c.github.io/portfolio/admin/) to manage your about information, portrait, projects, education, and multiple CV PDFs by field. Structured fields preserve the site's layout. Drafts can be previewed before publishing, and previous published versions can be restored.
 
-**Activation required:** follow [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md) to create the Supabase project, run the SQL migration, create your administrator email/password, and add the public configuration. No account or backend is preconfigured. Before activation, local exploration saves drafts on the current device only.
+**Supabase is connected:** sign in with the administrator email/password created during setup. The backend has no published content yet; your first publish seeds it from the current portfolio. See [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md) for account authorization, security checks, and recovery. Authenticated publishing and uploads still need verification through your account.
 
 The website remains on GitHub Pages. Supabase supplies secure account access, published content, history, and public file uploads. Layout/code changes remain in GitHub; dashboard publishing updates the database. The current default PDF is the owner-supplied photo CV. The legacy Python generator writes a separate `CV/Ferdaws_Qaem_Resume_Generated.pdf` and must not replace the active download.
 
